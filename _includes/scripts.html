@@ -1,5 +1,34 @@
 <!-- javascript at the end of the doc so page loads faster -->
 <script src="http://code.jquery.com/jquery.js"></script>
+<script src="bezier.js"></script>
+<script src="utils.js"></script>
+<script src="glyphmap.js"></script>
+<script src="paper-full.min.js"></script>
+<script src="svgconverter/PointCurveShape.js"></script>
+<script src="svgconverter/TTXPointCurveShape.js"></script>
+<script src="svgconverter/Receiver.js"></script>
+<script src="svgconverter/TTXReceiver.js"></script>
+<script src="svgconverter/SVGParser.js"></script>
+<script src="svgconverter/toTTX.js"></script>
+<script src="react-with-addons.js"></script>
+<script src="JSXTransformer.js"></script>
+<script type="text/jsx" src="app/Shapes.jsx"></script>
+<script type="text/jsx" src="app/Grid.jsx"></script>
+<script type="text/jsx" src="app/Panels.jsx"></script>
+<script type="text/jsx" src="app/Contour.jsx"></script>
+<script type="text/jsx" src="app/Project.jsx"></script>
+<script type="text/jsx" src="app/Controls.jsx"></script>
+<script type="text/jsx" src="app/App.jsx"></script>
+<script type="text/jsx">
+      (function loadApp() {
+        if(window.Shapes && window.Grid && window.Contour && window.App) {
+          React.render(<App {...{
+            width: 600,
+            height: 600
+          }}/>, document.getElementById('app'));
+        } else { setTimeout(loadApp, 100); }
+      }());
+    </script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/library.js"></script>
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
